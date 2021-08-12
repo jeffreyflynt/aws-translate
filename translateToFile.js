@@ -74,7 +74,8 @@ const translatePosts = async () => {
       content: translatedContent.TranslatedText,
     };
 
-    fs.writeFileSync("./output/" + languages[i] + ".json", data);
+    const output = JSON.stringify(data);
+    fs.writeFileSync("./output/" + languages[i] + ".json", output);
   }
 };
 
